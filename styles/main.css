@@ -1,0 +1,79 @@
+.side { vertical-align:absbottom; display:inline }
+    
+#JoinColumn {
+    position: absolute;
+    left: 25px;
+    top: 85px;
+    text-align: center;
+    font-size:16px;
+    text-align: center;
+    width: 290px;
+}
+ 
+#CenterColumn {
+    position: absolute;
+    top: 85px;
+    left: 396px;
+    text-align: center;
+    font-size:16px;
+    width: 290px;
+} 
+  
+#SaveColumn {
+    position: absolute;
+    right: 25px;
+    top: 85px;
+    text-align: center;
+    font-size:16px;
+    width: 290px;
+}
+
+#JoinNow {
+    font-size:20px;
+    bottom: 30px;
+    color: #006699;
+    position: absolute;
+    text-align: center;
+    width: 1082px;
+}
+
+#JoinNowButton {
+    display:block;
+    height: 50px;
+    width: 147px;
+    margin: auto;
+    background:url(../images/button.jpg) no-repeat 0 0;
+}
+
+#JoinNowButton:hover {
+    background-position: 0 -50px;
+}
+
+
+/*overrides*/
+#container {
+    height: 600px;
+    
+}
+
+h2 {
+	color: #006699;
+	font-size: 30px;
+	text-align: left;
+}
+
+h3 {
+	font-style:italic;
+	color: #ff6602;
+	font-size: 20px;
+	text-align: left;
+}
+
+#text2 {
+	position: relative;
+	top: 20px;
+	width: 1012px;
+	margin: auto;
+	font-size:16px;
+}
+

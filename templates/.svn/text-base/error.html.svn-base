@@ -1,0 +1,66 @@
+{% extends "page_template.html" %}
+{% block pagetitle %}Error!{% endblock pagetitle %}
+
+{% block pagescript %}
+<link href="/styles/error.css" rel="stylesheet" type="text/css" />
+{% endblock pagescript %}
+
+{% block container %}
+<div id="text2">
+  <h2>Error! {{error_message}}</h2>
+  
+  {% if signup %}  <!-- Singup Page -->
+  <div id="signup">
+    <form action="/register" method="POST">
+      <fieldset>
+	<p><label for="email">Email: </label><br />
+	  <input name="email" id="email"></p>
+	<p><label for="password">Password: </label><br />
+	  <input type="password" name="password" id="password"></p>
+	<p><label for="password">Confirm Password: </label><br />
+	  <input type="password" name="confirm-password" id="confirm-password"></p>
+	
+	<input type="submit" value="Sign Up">
+      </fieldset>
+    </form>
+    <p id="altsign">Already have an account? <a href="/signin">Sign in</a>!</p>
+  </div>
+  {% endif %}
+  
+  {% if signin %}    <!-- Signin Page -->
+  <div id="signin">
+    <form action="/login" method="POST">
+      <fieldset>
+	<p><label for="username">Email: </label><br />
+	  <input type="username" name="username"></p>
+	<p><label for="password">Password: </label><br />
+	  <input type="password" name="password"></p>
+	<input type="submit" value="Login">
+      </fieldset>
+    </form>
+    <p id="altsign">Not a member? <a href="/signup">Sign up</a> now!</p>
+  </div>
+  {% endif %}
+  
+  
+  {% if chpass %}  <!-- Change Password Page -->
+  <div id="chpass"> 
+  <h2>Change Your Password</h2>
+  <form action="/changePassword" method="POST">
+    <fieldset>
+      <p><label for="current_password">Current Password: </label><br />
+	<input type = "password" name="current_password" id="current_password"></p>
+      <p><label for="password">Password: </label><br />
+      <input type="password" name="password" id="password"></p>
+      <p><label for="password">Confirm Password: </label><br />
+	<input type="password" name="confirm-password" id="confirm-password"></p>
+      
+      <input type="submit" value="Change Password">
+    </fieldset>
+  </form>
+</div>
+  {% endif %}
+  
+</div>
+{% endblock container %}
+ 

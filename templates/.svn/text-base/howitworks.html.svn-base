@@ -1,0 +1,26 @@
+{% extends "page_template.html" %}
+{% block pagetitle %}How BeBannered Works{% endblock pagetitle %}
+
+{% block pagescript %}
+<link href="styles/howitworks.css" rel="stylesheet" type="text/css" />
+{% endblock pagescript %}
+
+{% block container %}
+<div id="text2">
+  <h1>How It Works</h1>
+  <p>Most  people agree: banner advertinsing is useless. It's irrelevant, ugly, and a waste of space. So why is it all over the Internet? Because websites need to make money  to bring you great products for free. For example, YouTube stores thousands of videos and lets you upload your own videos without charging you a penny. But they put ads on, around, and within videos in order to pay for their costs. It's awesome that advertisers are basically paying for us to use YouTube for free. But why is everyone just okay with the fact that the ads are irrelevant and ugly? And it's not just YouTube, it's how most websites work: cool products, terrible advertising. Let's solve this problem! When you sign up for BeBannered, we actually start buying up banner space on your behalf, and fill it up with  stuff you want to see. This way, awesome websites like YouTube still make money off their banner space (we pay them for it), while the Internet becomes a generally more pleasant place for you. Sound good?</p>
+  <p>1. The banner space you see on websites will always be there. You could download ad blocking software to make it blank, but isn't that just a waste of valuable Internet space? Blocking ads is not fair for anyone: websites, advertisers, or you. Allow us to fill it up with the stuff you care about.<br />
+    <br />2. We never show you pop-ups, rollovers, auto-sound, or animated banners. We show you plain and simple deals instead. Do what you please with them.<br />
+    <br />
+  3. Once you join, choose your location and favorite deal  categories on your preferences page. We will customize what you see based on these selections.  <br />
+  <br />
+  4. We can't replace all the banners you see. But the more you interact with, buy, and share our deals, the more annoying banners we&rsquo;ll be able to replace with BeBannered deals.<br />
+    <br />
+    5. You know you&rsquo;ve succeeded at getting rid of bad advertising when you see a deal that looks like the example on the right. Look  for &lsquo;BeBannered&rsquo; in the margin, and get pumped!<br />
+    <br />
+    6. If you want to learn more about how we do this, have feedback for us, or have privacy concerns you&rsquo;d like to raise, please <a href="mailto:info@bebannered.com">contact us</a>!<br />
+  </p>
+</div>
+<div id="BeBanneredVisual"><img src="../images/bebanneredvisuallarge.jpg" width="300" height="401" /></div>
+{% endblock container %}
+ 

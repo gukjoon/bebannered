@@ -1,0 +1,28 @@
+.side { vertical-align:absbottom; display:inline }
+    
+/*overrides*/
+#container {
+    /*height: 600px;   */
+}
+
+h2 {
+	color: #006699;
+	font-size: 30px;
+	text-align: left;
+}
+
+h3 {
+	font-style:italic;
+	color: #ff6602;
+	font-size: 20px;
+	text-align: left;
+}
+
+#text2 {
+	position: relative;
+	top: 20px;
+	width: 1012px;
+	margin: auto;
+	font-size:16px;
+}
+

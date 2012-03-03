@@ -1,0 +1,27 @@
+{% extends "page_template.html" %}
+{% block pagetitle %}Current BeBannered Deals{% endblock pagetitle %}
+
+{% block pagescript %}
+<link href="styles/deals.css" rel="stylesheet" type="text/css" />
+{% endblock pagescript %}
+
+{% block container %}
+<div id="text2">
+	<h1>Deals</h1>
+	{% for key in deals.items %}
+	<h3>{{key.0}}</h3>
+	{% for value in key.1 %}
+
+<p><a href="/landingpage/{{value.id}}">{{value.title}}</a></p>
+
+{% endfor %}
+{% endfor %}
+
+
+{% if nextpage %}
+<p><a href="/deals?page={{nextpage}}">Next Page</a></p>
+{% endif %}
+
+</div>
+
+{% endblock container %}

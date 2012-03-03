@@ -1,0 +1,32 @@
+{% extends "page_template.html" %}
+{% block pagetitle %}Login to BeBannered{% endblock pagetitle %}
+
+{% block pagescript %}
+<link href="/styles/signin.css" rel="stylesheet" type="text/css" />
+<script src="/js/chroma-hash.js" type="text/javascript"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $("input:password").chromaHash({bars: 3});    
+  });
+</script>
+{% endblock pagescript %}
+
+{% block container %}
+<div id="text2">
+  <h2>Sign In</h2>
+  <form action="/login" method="POST">
+    <fieldset>
+      <p><label for="username">Email: </label><br />
+	<input type="username" name="username"></p>
+      <p><label for="password">Password: </label><br />
+	<input type="password" name="password"></p>
+	{% if redirect %}
+  <input type="hidden" name="redirect" value={{redirect}}>
+  {% endif %}
+      <input type="submit" value="Login">
+    </fieldset>
+  </form>
+  <p id="altsign">Not a member? <a href="/signup">Sign up</a> now!</p>
+</div>
+{% endblock container %}
+ 

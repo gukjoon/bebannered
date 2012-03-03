@@ -1,0 +1,27 @@
+application: bebannred
+version: 1
+runtime: python
+api_version: 1
+
+handlers:
+- url: /remote_api
+  script: $PYTHON_LIB/google/appengine/ext/remote_api/handler.py
+
+- url: /favicon.ico
+  static_files: favicon.ico
+  upload: favicon.ico
+
+- url: /js
+  static_dir: js
+
+- url: /images
+  static_dir: images
+
+- url: /styles
+  static_dir: styles
+
+- url: /SpryAssets
+  static_dir: SpryAssets
+
+- url: .*
+  script: bebannered.py

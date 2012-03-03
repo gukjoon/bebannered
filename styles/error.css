@@ -1,0 +1,39 @@
+.side { vertical-align:absbottom; display:inline }
+
+
+#text2 {
+    top: 20px;
+    width: 600px;
+    margin: auto;
+    font-family:Calibri;
+    font-size:16px;
+	text-align: center;
+}
+
+h2 {
+    font-family:Calibri;
+    color: #006699;
+    font-size: 30px;
+    text-align: center;
+}
+
+input {
+    width: 440px;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+fieldset{
+    width: 440px;
+    margin: 15px auto;
+    border: none;
+}
+
+#altsign{
+    text-align: center;
+}
+
+#container{
+    #height: 600px;
+    
+}

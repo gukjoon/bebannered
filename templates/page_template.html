@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>{% block pagetitle %}{% endblock pagetitle %}</title>
+    <link rel="shortcut icon" href="/favicon.ico" mce_href="/favicon.ico"/>
+    <link href="/styles/bebannered.css" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+    {% block pagescript %}
+    {% endblock pagescript %}
+    <!--Google Analytics Tracking Tag-->
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-3456490-29']);
+      _gaq.push(['_trackPageview']);
+      
+      (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+    <!--End Google Analytics Tracking-->
+  </head>
+  <body>
+    <!--cookies-->
+    {% for cookie in cookies %}
+    <img src="/cookie?id={{cookie}}"/>
+    {% endfor %}
+    <!--dynamic menu-->
+    {% ifnotequal user "" %}
+      <div id="header">
+      <div id="logo"><a href="/"><img src="/images/logo2.jpg" alt="BeBannered!" class="link-img"/></a></div>
+      <div id="menubar"> 
+	<a href="/howitworks">HOW IT WORKS</a>
+	<a href="/deals">DEALS</a>
+	<a href="/preferences">PREFERENCES</a>
+	<a href="/logout">LOGOUT</a>
+      </div>
+    </div>
+    
+    {% else %}
+    <div id="header">
+      <div id="logo"><a href="/"><img src="/images/logo2.jpg" alt="BeBannered!" class="link-img"/></a></div>
+      <div id="menubar"> 
+	  <a href="/howitworks">HOW IT WORKS</a>
+      <a href="/deals">DEALS</a>
+      <a href="/signin">LOGIN</a>
+      <a href="/signup">JOIN!</a>
+      </div>
+    </div>
+    {% endifnotequal %}
+    
+    <!--main-->
+    <div id="container">
+      {% block container %}
+      {% endblock container %}
+    </div>
+    
+    <!--static footer-->
+    <div id="footer">
+      <P>
+    <a href="/">Home</a> .
+	<a href="/about">About</a> .
+	<a href="/privacy">Privacy</a><br/>
+	© 2010 <em>Be</em>Banner<em>ed!</em>
+      </P>
+    </div>
+    
+      
+  </body>
+</html>

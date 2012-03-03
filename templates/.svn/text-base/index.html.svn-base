@@ -1,0 +1,31 @@
+{% extends "page_template.html" %}
+{% block pagetitle %}BeBannered!{% endblock pagetitle %}
+
+{% block pagescript %}
+<link href="/styles/main.css" rel="stylesheet" type="text/css" />
+{% endblock pagescript %}
+
+{% block container %}
+<h1>Replace banner ads with local deals.</h1>
+<div id="JoinColumn">
+  <img src="/images/community2.jpg" width="210" height="220" /><br />
+<img src="/images/Join.jpg" width="71" height="34" alt="Join" /><br />
+Sign up for our community in one easy step. </div>
+<div id="CenterColumn">
+<img src="/images/bebanneredvisual.jpg" width="210" height="220" /><br />
+  <img src="/images/bebannered.jpg" width="209" height="34" al="" /> <br />
+  See deals for up to 90% off local restaurants, bars, and spas, in place of those pesky banners you never look at.
+</div>
+<div id="SaveColumn"> 
+<img src="/images/enjoyvisual.jpg" width="210" height="220" /><br />
+<img src="/images/enjoy.jpg" width="87" height="34" /><br />
+If any deals appeal to you, simply click, buy in one step, and let the fun begin! </div>
+<div id="JoinNow">
+  <p>&nbsp;</p>
+  <p><img src="../images/divider2.jpg" width="948" height="18" /></p>
+  <p>Get the clutter out of your inbox and make deals part of your Internet. It's free.<br />
+    <br />
+    <a id="JoinNowButton" href="/signup" title="Join Now!"></a></p>
+</div>
+
+<p>{% endblock container %} </p>

@@ -1,0 +1,96 @@
+{% extends "page_template.html" %}
+{% block pagetitle %}BeBannered!{% endblock pagetitle %}
+
+{% block pagescript %}
+<link href="/styles/landingpage.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript">
+  $(document).ready(function(){  
+    var locationArray = [];
+    var locationMarkers = [];
+    var myOptions = {scaleControl: true};
+  
+    var map = new google.maps.Map(document.getElementById("map_canvas"),myOptions);
+    map.setCenter(new google.maps.LatLng({{center.lat}},{{center.long}}));
+    map.setZoom(10);
+    map.setMapTypeId(google.maps.MapTypeId.ROADMAP);
+    
+    var bounds = new google.maps.LatLngBounds();
+    
+    {% for location in locations %}
+    locationArray.push(new google.maps.LatLng({{location.latitude}},{{location.longitude}}));
+    {% endfor %}
+    
+    for(var loc in locationArray){
+      locationMarkers.push(new google.maps.Marker({map: map, position: locationArray[loc]}));
+      bounds.extend(locationArray[loc]);
+    }
+    map.fitBounds(bounds);
+  });
+</script>
+{% endblock pagescript %}
+
+{% block container %}
+<div id="text2">
+  <div id="dealheader">
+  <h2>{{title}}</h2>
+  <h3>{{vendor}} • {{deal_area}}</h3>
+  <div id="dealtag">
+    <div id="dealtagimg"><img src="/images/dealtag2.jpg" /></div>
+    <!--TODO: This is aligned really weird-->
+    <div id="buy">
+    <form action="{{checkouturl}}" id="BB_BuyButtonForm" method="post" name="BB_BuyButtonForm" target="_top">
+	<input name="item_name_1" type="hidden" value="{{title}}"/>
+	<input name="item_description_1" type="hidden" value="{{vendor}}"/>
+	<input name="item_quantity_1" type="hidden" value="1"/>
+	<input name="item_price_1" type="hidden" value="{{price}}"/>
+	<input name="shopping-cart.merchant-private-data" type="hidden" value="<user-id>{{userid}}</user-id>" />
+	<input name="shopping-cart.items.item-1.merchant-item-id" type="hidden" value="{{key}}"/>
+	<input name="item_currency_1" type="hidden" value="USD"/>
+	<input name="_charset_" type="hidden" value="utf-8"/>
+	<input alt="" src="{{checkoutimg}}" type="image"/>
+      </form>
+    </div>
+    <div id="value">${{value}}</div>
+    <div id="savings">{{savings}}</div>
+    <div id="remaining">{{quantity}}</div>
+    <div id="price">${{price}}</div>
+  
+    <!--TODO: line this up properly-->
+    <div id="share">
+    Share This Deal
+    <a href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fwww.bebannered.com%2Flandingpage%2F{{gae_key}}&t={{title}}">
+      <img class="link-img" src="../images/facebook_icon.jpg"/></a>
+    <a href="http://twitter.com/?status={{title}} http://test.com/{{key}}">
+      <img class="link-img" src="../images/twitter_icon.jpg"/></a>
+ 	</div>
+  	</div>
+  </div>  
+  <div id="dealimage">
+    <img src="{{image}}"/>
+  </div>
+  <div id="location">
+    <h4>Map & Locations</h4>
+    <p>{{vendor}} (<a href="{{url}}">Website</a>)<br />
+      <div id="addresses">
+      {% for location in locations %}
+      <p>{{location.address}}</p>
+      {% endfor %}
+      </div>
+      <!--TODO: need google map params and correct api implementation-->
+    <div id="map_canvas" style="width: 355px; height: 200px;"></div>
+    <br /><small><a href="http://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=6437+La+Mirada+Avenue,+Los+Angeles,+CA&amp;aq=0&amp;sll=37.0625,-95.677068&amp;sspn=36.863178,86.572266&amp;ie=UTF8&amp;hq=&amp;hnear=6437+La+Mirada+Ave,+Los+Angeles,+California+90038&amp;ll=34.094819,-118.330135&amp;spn=0.02111,0.030384&amp;z=14" style="color:#0000FF;text-align:left">View Larger Map</a></small>
+  </div>
+  <div id="text3">
+    <div id="fine_print">
+      <h3>The Fine Print</h3>
+      {{fineprint}}
+    </div>
+    </br>
+    <div id="vendor_details">
+      <h3>{{vendor}}</h3>
+      {{vendor_desc}}
+    </div>
+  </div>
+</div>
+{% endblock container %}

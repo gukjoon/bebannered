@@ -1,0 +1,28 @@
+
+#text2 {
+	position: absolute;
+	top: 20px;
+	left: 35px;
+	width: 650px;
+	margin: auto;
+	font-size:16px;
+}
+
+#Banner300x250{
+    position: absolute;
+    top: 50px;
+    right: 1px;
+    text-align:right;
+    padding-right: 45px;
+}
+
+h2 {
+	color: #006699;
+	font-size: 30px;
+	text-align: left;
+}
+
+
+#container{
+    height: 320px;
+}

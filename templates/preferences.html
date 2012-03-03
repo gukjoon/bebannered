@@ -1,0 +1,60 @@
+{% extends "page_template.html" %}
+{% block pagetitle %}BeBannered!{% endblock pagetitle %}
+
+{% block pagescript %}
+<link href="styles/preferences.css" rel="stylesheet" type="text/css" />
+{% endblock pagescript %}
+
+{% block container %}
+<div id="text2">
+<h2 class="side">Preferences</h2>
+<div id="mypreferences">
+  <p class="side"><em>You'll see deals based on your selections</em></p>
+  <form action="/preferences/{{userkey}}" method="POST">
+    <div id="locationprefs">
+      <h3>My Locations</h3>
+      {% for dealarea in dealareas %}
+      <label for="location.{{dealarea.1}}">{{dealarea.0}}</label>
+      <input type="checkbox" name="location.{{dealarea.1}}" {% if dealarea.2 %}checked{% endif %}/><br/>
+      {% endfor %}
+    </div>
+    <div id="prefs">
+      <h3>My Favorite Deals</h3>
+      {% for preference in preferences %}
+      <b><label for="vendor.{{preference.1}}">{{preference.0}}</label></b>
+      <input type="checkbox" name="vendor.{{preference.1}}" {% if preference.2 %}checked{% endif %}/><br/>
+      <!--tables are ugly! change this!-->
+      <table>
+	{% for subpref in preference.3 %}
+	<tr>
+	  <td><label for="vendor.{{subpref.1}}">{{subpref.0}}</label></td>
+	  <td><input type="checkbox" name="vendor.{{subpref.1}}" {% if subpref.2 %}checked{% endif %}/><br/>
+	</tr>
+	{% endfor %}
+      </table>
+      {% endfor %}
+    </div>
+  <input type="submit" value="Submit">
+</div>
+
+
+<br />
+<br />
+</form>
+<img src="../images/divider2.jpg" width="948" height="18" />
+<div id="mydeals">
+  <h2>My Deals</h2>
+  <table>
+  {% for mydeal in mydeals %}
+  <tr>
+    <td>{{mydeal.vendor}}</td>
+    <td><a href="{{mydeal.display}}">{{mydeal.title}}</a></td>
+  </tr>
+  {% endfor %}
+  </table>
+</div>
+
+<h2><a href="/changePassword"> Change Password</a></h2>
+</div>
+
+{% endblock container %}

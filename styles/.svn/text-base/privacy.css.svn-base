@@ -1,0 +1,157 @@
+.side { vertical-align:absbottom; display:inline }
+    
+/*overrides*/
+#container {
+}
+
+
+h2 {
+    color: #006699;
+    font-size: 30px;
+    text-align: left;
+	width: 600px;
+	margin-top: 0px;
+	margin-bottom: 8px;
+}
+
+h3 {
+    font-style:italic;
+    color: #ff6602;
+    font-size: 26px;
+    text-align: left;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+h4 {
+	font-family:Calibri;
+	font-style:italic;
+	color: #ff6602;
+	font-size: 26px;
+	text-align: center;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+#text2 {
+    position: relative;
+    top: 20px;
+    width: 1000px;
+    margin: auto;
+    font-size:16px;
+}
+
+#text3 {
+	position: absolute;
+	left: 0px;
+	top: 315px;
+	width:600px;
+	font-size: 16px;
+	text-align: left;
+}
+
+#dealimage {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+}
+
+#dealtag {
+	position: absolute;
+	top: 165px;
+	text-align:left;
+}
+
+#buy {
+	position: absolute;
+	top: 183px;
+	left: 46px;
+	font-weight:bold;
+	color: #f2f419;
+	font-size: 42px;
+    filter:alpha(opacity=100);
+    -moz-opacity:1;
+    -khtml-opacity: 1;
+    opacity: 1;
+}
+
+#buy a:link {
+	color: #f2f419;
+	text-decoration: none;
+}
+
+#buy a:hover {
+    color: #ff6501;
+	text-decoration: none;
+}
+
+#buy a:visited {
+	color: #f2f419;
+	text-decoration: none;
+}
+
+
+#container a:visited {
+    color: #f2f419;
+	text-decoration: none;
+}
+
+#value {
+	position: absolute;
+	top: 195px;
+	left: 190px;
+	font-weight:bold;
+	color: #006599;
+	font-size: 26px;
+ 	filter:alpha(opacity=100);
+    -moz-opacity:1;
+    -khtml-opacity: 1;
+    opacity: 1;
+}
+
+#savings {
+	position: absolute;
+	top: 195px;
+	left: 315px;
+	font-weight:bold;
+	color: #006599;
+	font-size: 26px;
+ 	filter:alpha(opacity=100);
+    -moz-opacity:1;
+    -khtml-opacity: 1;
+    opacity: 1;
+}
+
+#remaining {
+	position: absolute;
+	top: 195px;
+	left: 440px;
+	font-weight:bold;
+	color: #006599;
+	font-size: 26px;
+ 	filter:alpha(opacity=100);
+    -moz-opacity:1;
+    -khtml-opacity: 1;
+    opacity: 1;
+}
+
+#price {
+	position: absolute;
+	top: 185px;
+	left: 530px;
+	font-weight:bold;
+	color: #f2f419;
+	font-size: 38px;
+    filter:alpha(opacity=100);
+    -moz-opacity:1;
+    -khtml-opacity: 1;
+    opacity: 1;
+}
+
+#location {
+	width: 355px;
+	position: absolute;
+	top: 315px;
+	right: 0px;
+	text-align: center;
+}

@@ -1,0 +1,19 @@
+{% extends "page_template.html" %}
+{% block pagetitle %}About BeBannered{% endblock pagetitle %}
+
+{% block pagescript %}
+<link href="styles/about.css" rel="stylesheet" type="text/css" />
+{% endblock pagescript %}
+
+{% block container %}
+<div id="text2">
+  <h1> About</h1>
+  <p>BeBannered was founded by Hugh Gordon and Shivank Gupta. Both of us believe that banner advertising is great because it allows awesome websites (like YouTube and Facebook) to be free to all users. However, we also think that banner advertising stinks because it's annoying, ugly, and irrelevant. And we're pretty sure that most people agree. So we set out to solve this problem, and BeBannered was born. We hope you like it.</p>
+  <p>Please <a href="mailto: info@mediadron.com">contact us</a> via email. And send us snail mail at:<br />
+    <br />
+    6437 La Mirada Ave<br />
+  Los Angeles, CA 90038<br />
+  </p>
+</div>
+<div id="Banner300x250"><img src="../images/300x250mock.jpg" width="300" height="250" /></div>
+{% endblock container %}
